@@ -1,0 +1,25 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Mar 22, 2025, 6:36:12 PM
+    Author     : sanuja
+*/
+
+.add-user-btn {
+    display: inline-block;
+    background-color: #4C585B;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px auto;
+}
+
