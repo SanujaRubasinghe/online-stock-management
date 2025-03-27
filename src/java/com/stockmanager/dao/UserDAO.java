@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -34,6 +36,8 @@ public class UserDAO {
             
             ResultSet results = stmt.executeQuery(sql);
             
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            
             while (results.next()) {
                 int id = results.getInt("id");
                 String firstName = results.getString("first_name");
@@ -41,9 +45,18 @@ public class UserDAO {
                 String userName = results.getString("user_name");
                 String role = results.getString("role");
                 Timestamp timestamp = results.getTimestamp("last_login_date");
-                LocalDateTime loginDate = timestamp.toLocalDateTime();
+                String lastLoginDateTime;
                 
-                usersList.add(new User(id, firstName, lastName, userName, role, loginDate));
+                if (timestamp != null) {
+                    LocalDateTime lastlogin = timestamp.toLocalDateTime();
+                    lastLoginDateTime = lastlogin.format(formatter);
+                } else {
+                    lastLoginDateTime = "-";
+                }
+                
+                
+                
+                usersList.add(new User(firstName, id, lastName, userName, role, lastLoginDateTime));
             }
         }catch (SQLException e) {
             e.printStackTrace();

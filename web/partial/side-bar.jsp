@@ -21,7 +21,7 @@
             <div class="item"><a href="#">Product Management</a></div>
             <div class="item"><a href="#">Order Management</a></div>
             <div class="item"><a href="#">Supplier Management</a></div>
-            <div class="item"><a href="logout">Log Out</a></div>
+            <div class="item"><a href="logout" class="logout-btn">Log Out</a></div>
         </div>
     </div>
 </html>

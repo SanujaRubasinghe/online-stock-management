@@ -16,7 +16,7 @@ public class User {
     private String userName;
     private String password;
     private String role;
-    private LocalDateTime loginDate;
+    private String loginDate;
 
     public User(int id, String firstName, String lastName, String userName, String password, String role) {
         this.id = id;
@@ -26,17 +26,17 @@ public class User {
         this.password = password;
         this.role = role;
     }
-
-    public User(int id, String firstName, String lastName, String userName, String role, LocalDateTime loginDate) {
-        this.id = id;
+    
+    public User(String firstName, int id, String lastName, String userName, String role, String loginDate) {
         this.firstName = firstName;
+        this.id = id;
         this.lastName = lastName;
         this.userName = userName;
         this.role = role;
         this.loginDate = loginDate;
     }
-
-    public LocalDateTime getLoginDate() {
+    
+    public String getLoginDate() {
         return loginDate;
     }
 

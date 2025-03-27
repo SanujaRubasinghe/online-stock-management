@@ -25,7 +25,7 @@
     <body>
         <%@include file="./partial/side-bar.jsp" %>
         
-        <div id="content"><h1>Admin Panel</h1></div>
+        <div id="content"><h1>Dashboard</h1></div>
         
         <script src="./js/admin-panel.js"></script>
         
