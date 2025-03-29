@@ -9,17 +9,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 
 .add-user-btn {
     display: inline-block;
-    background-color: #4C585B;
+    background-color: #4F959D;
     color: white;
+    font-family: sans-serif;
     text-decoration: none;
-    padding: 15px 20px;
-    font-size: 20px;
+    padding: 5px 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    float: right;
+}
+
+table {
+    width: 95%;
 }
 
 table, th, td {
-    border: 1px solid;
+    border: 1px solid #9AA6B2;
     border-collapse: collapse;
     padding: 10px;
     margin: 10px auto;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
 }
 

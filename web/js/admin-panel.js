@@ -20,3 +20,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+function toggleUserDropdown() {
+    document.getElementById("user-dropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+    if(!e.target.matches(".user-profile-dropbtn")) {
+        let dropdown = document.getElementById("user-dropdown");
+        if (dropdown.classList.contains("show")) {
+            dropdown.classList.remove("show");
+        }
+    }
+};

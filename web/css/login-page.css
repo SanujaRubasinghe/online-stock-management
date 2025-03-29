@@ -1,0 +1,71 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Mar 28, 2025, 10:14:25 AM
+    Author     : sanuja
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: ##EAEAEA;
+}
+
+.login-form-container {
+    background: #9AA6B2;
+    width: 300px;
+    height: 300px;
+    font-size: 24px;
+    border: none;
+    border-radius: 3px;
+}
+
+form {
+    padding: 20px 25px;
+}
+
+input {
+    width: 100%;
+}
+
+input[type='text'],
+input[type='password'] {
+    font-size: 24px;
+    margin: 10px 0;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border: none;
+}
+
+input[type='submit'] {
+    padding: 5px 10px;
+    margin-top: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background: #88304E;
+    border: none;
+    border-radius: 3px;
+}
+
+.heading {
+    background: #D72323;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+

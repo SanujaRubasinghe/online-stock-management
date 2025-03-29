@@ -20,17 +20,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="./css/admin-panel/admin-panel.css" >
         <link rel="stylesheet" type="text/css" href="./css/admin-panel/user-management.css" >
-        <title>JSP Page</title>
+        <title>User Management</title>
     </head>
     <body>
         
         <%@ include file="./partial/side-bar.jsp" %>
         
         <div id="content">
-            <a href="add-user-form.html" class="add-user-btn">Add User</a>
-
-
-            <table>
+            <%@include file="./partial/nav-bar.jsp" %>
+            
+            <div class="content-container">
+                <div class="content-heading">
+                    <div class="content-title">USERS</div>
+                    <a href="add-user-form.html" class="add-user-btn">ADD USER</a>
+                </div>
+                <div class="content-body">
+                    <table>
                 <tr>
                     <th>Id</th>
                     <th>First Name</th>
@@ -52,6 +57,9 @@
                     </tr>
                 </c:forEach>
             </table>
+                </div>
+            </div>
+            
         </div>
         <script src="./js/admin-panel.js"></script>
     </body>

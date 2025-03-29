@@ -9,16 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" href="./css/login-page.css"/>
+        <title>Login Page</title>
     </head>
     <body>
-        <h1>Login</h1>
-        
-        <form action="LoginServlet" method="post">
-            User Name: <input type="text" name="username" placeholder="User Name" required><br>
-            Password: <input type="password" name="password" placeholder="Password" required><br>
-            <input type="submit" value="Submit">            
-        </form>
+        <div class="login-form-container">
+            <div class="heading">Inventory System</div>
+            <form action="LoginServlet" method="post">
+                <input type="text" name="username" placeholder="User Name" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="submit" value="Log In">            
+            </form>
+        </div>
         
     </body>
 </html>

@@ -52,9 +52,7 @@ public class UserDAO {
                     lastLoginDateTime = lastlogin.format(formatter);
                 } else {
                     lastLoginDateTime = "-";
-                }
-                
-                
+                }    
                 
                 usersList.add(new User(firstName, id, lastName, userName, role, lastLoginDateTime));
             }
