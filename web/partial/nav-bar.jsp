@@ -11,7 +11,8 @@
         <div class="user-profile">
             <button class="user-profile-dropbtn" onclick="toggleUserDropdown()">👤<%= session.getAttribute("username") %>▾</button>
             <div class="user-dropdown" id="user-dropdown">
-                <a href="logout">Log Out</a>
+                <a href="#">Profile</a>
+                <a href="logout"><span style="color:red">Log Out</span></a>
             </div>
         </div>
     </nav>

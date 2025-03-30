@@ -23,6 +23,21 @@ body {
     
 }
 
+.add-btn {
+    display: inline-block;
+    background-color: #4F959D;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 5px 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    float: right;
+}
+
 /*---- Side Bar styling ----*/
 
 .side-bar {
@@ -114,7 +129,7 @@ body {
 }
 
 .content-body {
-    
+    padding: 10px;
 }
 
 .content-title {
@@ -168,7 +183,7 @@ body {
     float: none;
     display: block;
     text-decoration: none;
-    color: red;
+    color: black;
     padding: 10px 15px;  
     line-height: 10px;
 }

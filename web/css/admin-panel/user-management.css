@@ -7,23 +7,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : sanuja
 */
 
-.add-user-btn {
-    display: inline-block;
-    background-color: #4F959D;
-    color: white;
-    font-family: sans-serif;
-    text-decoration: none;
-    padding: 5px 8px;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-right: 20px;
-    border: none;
-    border-radius: 5px;
-    float: right;
-}
+
 
 table {
     width: 95%;
+    text-align: center;
 }
 
 table, th, td {
@@ -37,3 +25,40 @@ tr:nth-child(even) {
     background: #f2f2f2;
 }
 
+.access-level{
+    color: white;
+    display: inline-block;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 2px;
+}
+
+.High {
+    background: #F7374F;
+}
+
+.Medium {
+    background: #FCB454;
+}
+
+.Low {
+    background: green;
+}
+
+
+.delete-btn, .update-btn {
+    display: inline-block;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background: #BF3131;
+}
+
+.update-btn {
+    background: #336D82;
+}

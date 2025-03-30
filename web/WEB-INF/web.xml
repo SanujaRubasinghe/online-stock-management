@@ -24,6 +24,18 @@
         <servlet-name>DeleteUserServlet</servlet-name>
         <servlet-class>com.stockmanager.controller.DeleteUserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ShowAddUserFormServlet</servlet-name>
+        <servlet-class>com.stockmanager.controller.ShowAddUserFormServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddUserGroupServlet</servlet-name>
+        <servlet-class>com.stockmanager.controller.AddUserGroupServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowUserGroups</servlet-name>
+        <servlet-class>com.stockmanager.controller.ShowUserGroupsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddUserServlet</servlet-name>
         <url-pattern>/add-user</url-pattern>
@@ -43,6 +55,18 @@
     <servlet-mapping>
         <servlet-name>DeleteUserServlet</servlet-name>
         <url-pattern>/delete-user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowAddUserFormServlet</servlet-name>
+        <url-pattern>/add-user-form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddUserGroupServlet</servlet-name>
+        <url-pattern>/add-group</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowUserGroups</servlet-name>
+        <url-pattern>/user-groups</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

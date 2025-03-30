@@ -15,7 +15,7 @@
                 <a class="sub-btn">User Management<span class="dropdown">▶</span></a>
                 <div class="sub-menu">
                     <a href="show-users">Manage Users</a>
-                    <a href="#">Manage Groups</a>
+                    <a href="user-groups">Manage Groups</a>
                 </div>
             </div>
             <div class="item"><a href="#">Product Management</a></div>

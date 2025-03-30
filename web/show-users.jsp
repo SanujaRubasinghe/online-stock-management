@@ -32,7 +32,7 @@
             <div class="content-container">
                 <div class="content-heading">
                     <div class="content-title">USERS</div>
-                    <a href="add-user-form.html" class="add-user-btn">ADD USER</a>
+                    <a href="add-user-form" class="add-btn">ADD USER</a>
                 </div>
                 <div class="content-body">
                     <table>
@@ -53,7 +53,7 @@
                         <td>${tempUser.getUserName()}</td>
                         <td>${tempUser.getRole()}</td>
                         <td>${tempUser.getLoginDate()}</td>
-                        <td><a href="#">Update</a> | <a href="delete-user?id=${tempUser.getId()}"+>Delete</a></td>
+                        <td><a href="#" class="update-btn">Update</a> | <a href="delete-user?id=${tempUser.getId()}" class="delete-btn">Delete</a></td>
                     </tr>
                 </c:forEach>
             </table>

@@ -20,12 +20,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="./css/admin-panel/admin-panel.css" >
 
-        <title>JSP Page</title>
+        <title>Dashboard</title>
     </head>
     <body>
         <%@include file="./partial/side-bar.jsp" %>
         
-        <div id="content"><h1>Dashboard</h1></div>
+        <div id="content">
+            <%@include file="./partial/nav-bar.jsp" %>
+            
+        </div>
         
         <script src="./js/admin-panel.js"></script>
         
