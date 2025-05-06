@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.stockmanager.controller;
+package com.stockmanager.User.controller;
 
-import com.stockmanager.dao.UserDAO;
-import com.stockmanager.model.User;
+import com.stockmanager.User.dao.UserDAO;
+import com.stockmanager.User.model.User;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -16,23 +16,25 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author sanuja
  */
-public class LoginServlet extends HttpServlet {
-    
+public class AddUserServlet extends HttpServlet {
+
     @Resource(name="jdbc/inventorydb")
     private DataSource dataSource;
     
     private UserDAO userDAO;
+
     @Override
     public void init() throws ServletException {
-        super.init(); 
+        super.init();
         userDAO = new UserDAO(dataSource);
     }
+    
+    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,46 +44,66 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");
+            out.println("<title>Servlet AddNewUserServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AddNewUserServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
-    
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
-    
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String username = request.getParameter("username");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String userName = request.getParameter("userName");
         String password = request.getParameter("password");
+        String role = request.getParameter("role");
         
-        User user = new User(username, password);
+        User user = new User(firstName, lastName, userName, password, role);
         
-        if (userDAO.validateUser(user)) {
-            userDAO.setLoginTime(username);
-            HttpSession session = request.getSession(true);
-            session.setAttribute("username", username);
-            response.sendRedirect("admin-panel.jsp");
+        boolean isAdded = userDAO.addUser(user);
+        
+        if (isAdded) {
+            response.sendRedirect("show-users");
         } else {
-            response.sendRedirect("error.jsp");
+            response.getWriter().println("Failed to add user");
         }
     }
 
-    
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

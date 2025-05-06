@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.stockmanager.dao;
+package com.stockmanager.User.dao;
 
-import com.stockmanager.model.User;
+import com.stockmanager.User.controller.SessionListener;
+import com.stockmanager.User.model.User;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.time.format.DateTimeFormatter;
  *
  * @author sanuja
  */
-public class UserDAO {
+public class UserDAO{
     private DataSource dataSource;
     
     public UserDAO(DataSource dataSource) {
@@ -43,7 +44,11 @@ public class UserDAO {
                 String firstName = results.getString("first_name");
                 String lastName = results.getString("last_name");
                 String userName = results.getString("user_name");
-                String role = results.getString("role");
+                String role = results.getString("role");                
+                boolean isActive = SessionListener.isUserOnline(userName);
+                
+               
+                
                 Timestamp timestamp = results.getTimestamp("last_login_date");
                 String lastLoginDateTime;
                 
@@ -54,7 +59,7 @@ public class UserDAO {
                     lastLoginDateTime = "-";
                 }    
                 
-                usersList.add(new User(firstName, id, lastName, userName, role, lastLoginDateTime));
+                usersList.add(new User(firstName, id, lastName, userName, role, isActive, lastLoginDateTime));
             }
         }catch (SQLException e) {
             e.printStackTrace();

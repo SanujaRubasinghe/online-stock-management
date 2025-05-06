@@ -2,40 +2,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.stockmanager.controller;
+package com.stockmanager.User.controller;
 
-import com.stockmanager.dao.UserDAO;
-import com.stockmanager.model.User;
-import java.util.*;
+import com.stockmanager.User.dao.UserDAO;
+import com.stockmanager.User.model.User;
+
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author sanuja
  */
-public class ShowUsersServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     
     @Resource(name="jdbc/inventorydb")
     private DataSource dataSource;
     
     private UserDAO userDAO;
-    private List<User> userList;
-
     @Override
     public void init() throws ServletException {
-        super.init();
+        super.init(); 
         userDAO = new UserDAO(dataSource);
     }
-    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -45,10 +42,10 @@ public class ShowUsersServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ShowUsersServlet</title>");
+            out.println("<title>Servlet LoginServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ShowUsersServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,21 +56,33 @@ public class ShowUsersServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        userList = userDAO.getUsers();
-        request.setAttribute("userList", userList);
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/show-users.jsp");
-        dispatcher.forward(request, response);
     }
 
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        User user = new User(username, password);
+        
+        if (userDAO.validateUser(user)) {
+            userDAO.setLoginTime(username);
+            HttpSession session = request.getSession(true);
+            session.setAttribute("username", username);
+            session.setMaxInactiveInterval(10 * 60);
+            
+            SessionListener.addUser(username);
+            
+            response.sendRedirect("admin-panel.jsp");
+        } else {
+            response.sendRedirect("error.jsp");
+        }
     }
 
-   
+    
     @Override
     public String getServletInfo() {
         return "Short description";

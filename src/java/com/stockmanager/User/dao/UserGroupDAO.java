@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.stockmanager.dao;
+package com.stockmanager.User.dao;
 
-import com.stockmanager.model.UserGroup;
+import com.stockmanager.User.model.UserGroup;
 
 import javax.sql.DataSource;
 import java.sql.*;

@@ -3,11 +3,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
 */
 /* 
-    Created on : Mar 22, 2025, 6:36:12 PM
+    Created on : May 6, 2025, 12:04:46 PM
     Author     : sanuja
 */
-
-
 
 table {
     width: 95%;
@@ -25,27 +23,6 @@ tr:nth-child(even) {
     background: #f2f2f2;
 }
 
-.access-level{
-    color: white;
-    display: inline-block;
-    padding: 5px 8px;
-    border: none;
-    border-radius: 2px;
-}
-
-.High {
-    background: #F7374F;
-}
-
-.Medium {
-    background: #FCB454;
-}
-
-.Low {
-    background: green;
-}
-
-
 .delete-btn, .update-btn {
     display: inline-block;
     padding: 5px 8px;
@@ -61,14 +38,4 @@ tr:nth-child(even) {
 
 .update-btn {
     background: #336D82;
-}
-
-.Online {
-    color: green;
-    font-weight: bold;
-}
-
-.Offline {
-    color: red;
-    font-weight: bold;
 }

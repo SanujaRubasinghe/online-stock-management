@@ -6,35 +6,51 @@
     </servlet>
     <servlet>
         <servlet-name>AddUserServlet</servlet-name>
-        <servlet-class>com.stockmanager.controller.AddUserServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.AddUserServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ShowUsersServlet</servlet-name>
-        <servlet-class>com.stockmanager.controller.ShowUsersServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.ShowUsersServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.stockmanager.controller.LoginServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.stockmanager.controller.LogoutServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.LogoutServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteUserServlet</servlet-name>
-        <servlet-class>com.stockmanager.controller.DeleteUserServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.DeleteUserServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ShowAddUserFormServlet</servlet-name>
-        <servlet-class>com.stockmanager.controller.ShowAddUserFormServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.ShowAddUserFormServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddUserGroupServlet</servlet-name>
-        <servlet-class>com.stockmanager.controller.AddUserGroupServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.AddUserGroupServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ShowUserGroups</servlet-name>
-        <servlet-class>com.stockmanager.controller.ShowUserGroupsServlet</servlet-class>
+        <servlet-class>com.stockmanager.User.controller.ShowUserGroupsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SessionListener</servlet-name>
+        <servlet-class>com.stockmanager.User.controller.SessionListener</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OnlineUsersServlet</servlet-name>
+        <servlet-class>com.stockmanager.User.controller.OnlineUsersServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderController</servlet-name>
+        <servlet-class>com.stockmanager.Order.controller.OrderController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductController</servlet-name>
+        <servlet-class>com.stockmanager.Product.controller.ProductController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddUserServlet</servlet-name>
@@ -67,6 +83,22 @@
     <servlet-mapping>
         <servlet-name>ShowUserGroups</servlet-name>
         <url-pattern>/user-groups</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessionListener</servlet-name>
+        <url-pattern>/SessionListener</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OnlineUsersServlet</servlet-name>
+        <url-pattern>/OnlineUsersServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderController</servlet-name>
+        <url-pattern>/OrderController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductController</servlet-name>
+        <url-pattern>/ProductController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

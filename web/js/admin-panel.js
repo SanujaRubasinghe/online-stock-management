@@ -33,3 +33,22 @@ window.onclick = function(e) {
         }
     }
 };
+
+
+function updateOnlineStatus() {
+    fetch('OnlineUsersServlet')
+            .then(response => response.json())
+            .then(onlineUsers => {
+                document.querySelectorAll('.user-status').forEach(statusElement => {
+                    let username = statusElement.dataset.username;
+                    if (onlineUsers.includes(username)) {
+                        statusElement.textContent = 'Online';
+                        statusElement.style.color = 'green';
+                    } else {
+                        statusElement.textContent = 'Offline';
+                        statusElement.style.color = 'red';
+                    }
+                })
+            .catch(error => console.error('Error fetching online users: ', error));
+    });
+}

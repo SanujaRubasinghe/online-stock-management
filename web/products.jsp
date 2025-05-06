@@ -1,6 +1,6 @@
 <%-- 
-    Document   : show-users
-    Created on : Mar 27, 2025, 4:02:08 PM
+    Document   : products
+    Created on : May 6, 2025, 9:27:25 AM
     Author     : sanuja
 --%>
 
@@ -20,45 +20,41 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="./css/admin-panel/admin-panel.css" >
-        <link rel="stylesheet" type="text/css" href="./css/admin-panel/user-management.css" >
-        <title>User Management</title>
+        <link rel="stylesheet" type="text/css" href="./css/admin-panel/product-management.css">
+        <title>Products</title>
     </head>
     <body>
-        
-        <%@ include file="./partial/side-bar.jsp" %>
+        <%@include file="./partial/side-bar.jsp" %>
         
         <div id="content">
             <%@include file="./partial/nav-bar.jsp" %>
             
             <div class="content-container">
                 <div class="content-heading">
-                    <div class="content-title">USERS</div>
-                    <a href="add-user-form" class="add-btn">ADD USER</a>
+                    <div class="content-title">PRODUCTS</div>
+                    <a href="ProductController?action=add-product" class="add-btn">ADD PRODUCT</a>
                 </div>
                 <div class="content-body">
                     <table>
                 <tr>
-                    <th>Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>User Name</th>
-                    <th>Role</th>
-                    <th>Active Status</th>
-                    <th>Last Login</th>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
                     <th>Actions</th>
                 </tr>
-                <c:forEach var="tempUser" items="${userList}">
+                <c:forEach var="tempProduct" items="${products}">
                     <tr>
-                        <td>${tempUser.getId()}</td>
-                        <td>${tempUser.getFirstName()}</td>
-                        <td>${tempUser.getLastName()}</td>
-                        <td>${tempUser.getUserName()}</td>
-                        <td>${tempUser.getRole()}</td>
+                        <td>${tempProduct.getProductCode()}</td>
+                        <td>${tempProduct.getName()}</td>
+                        <td>${tempProduct.getDescription()}</td>
+                        <td>${tempProduct.getPrice()}</td>
+                        <td>${tempProduct.getQuantity()}</td>
                         <td>
-                            <span class="${tempUser.getActiveStatus()}">${tempUser.getActiveStatus()}</span>
+                            <a href="ProductController?action=edit-product&id=${tempProduct.getProductCode()}" class="update-btn">Update</a> | 
+                            <a href="ProductController?action=delete-product&id=${tempProduct.getProductCode()}" class="delete-btn">Delete</a>
                         </td>
-                        <td>${tempUser.getLoginDate()}</td>
-                        <td><a href="#" class="update-btn">Update</a> | <a href="delete-user?id=${tempUser.getId()}" class="delete-btn">Delete</a></td>
                     </tr>
                 </c:forEach>
             </table>
@@ -66,6 +62,7 @@
             </div>
             
         </div>
+        
         <script src="./js/admin-panel.js"></script>
     </body>
 </html>

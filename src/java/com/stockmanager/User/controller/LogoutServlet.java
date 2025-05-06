@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.stockmanager.controller;
+package com.stockmanager.User.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -59,6 +59,12 @@ public class LogoutServlet extends HttpServlet {
         
         HttpSession session = request.getSession(false);
         if (session != null) {
+            String userName = (String) session.getAttribute("username");
+            
+            if (userName != null) {
+                SessionListener.removeUser(userName);
+            }
+            
             session.invalidate();
         }
         

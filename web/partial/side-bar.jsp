@@ -18,8 +18,14 @@
                     <a href="user-groups">Manage Groups</a>
                 </div>
             </div>
-            <div class="item"><a href="#">Product Management</a></div>
-            <div class="item"><a href="#">Order Management</a></div>
+            <div class="item"><a href="ProductController">Product Management</a></div>
+            <div class="item">
+                <a class="sub-btn">Order Management<span class="dropdown">▶</span></a>
+                <div class="sub-menu">
+                    <a href="OrderController">Orders</a>
+                    <a href="OrderController?action=new">Add Order</a>
+                </div>
+            </div>
             <div class="item"><a href="#">Supplier Management</a></div>
         </div>
     </div>

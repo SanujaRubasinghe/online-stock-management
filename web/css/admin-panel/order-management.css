@@ -1,0 +1,23 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : May 6, 2025, 12:04:37 PM
+    Author     : sanuja
+*/
+table {
+    width: 95%;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #9AA6B2;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
