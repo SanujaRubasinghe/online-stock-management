@@ -47,7 +47,13 @@ public class UserDAO{
                 String role = results.getString("role");                
                 boolean isActive = SessionListener.isUserOnline(userName);
                 
-               
+                String loginStatus;
+                
+                if (isActive) {
+                    loginStatus = "Online";
+                } else {
+                    loginStatus = "Offline";
+                }
                 
                 Timestamp timestamp = results.getTimestamp("last_login_date");
                 String lastLoginDateTime;
@@ -59,7 +65,7 @@ public class UserDAO{
                     lastLoginDateTime = "-";
                 }    
                 
-                usersList.add(new User(firstName, id, lastName, userName, role, isActive, lastLoginDateTime));
+                usersList.add(new User(firstName, id, lastName, userName, role, loginStatus, lastLoginDateTime));
             }
         }catch (SQLException e) {
             e.printStackTrace();

@@ -20,11 +20,7 @@
             </div>
             <div class="item"><a href="ProductController">Product Management</a></div>
             <div class="item">
-                <a class="sub-btn">Order Management<span class="dropdown">▶</span></a>
-                <div class="sub-menu">
-                    <a href="OrderController">Orders</a>
-                    <a href="OrderController?action=new">Add Order</a>
-                </div>
+                <a href="OrderController">Order Management</a>
             </div>
             <div class="item"><a href="#">Supplier Management</a></div>
         </div>

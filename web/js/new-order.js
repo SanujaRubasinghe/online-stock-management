@@ -14,7 +14,7 @@ function addProductRow() {
             <input type="text" name="productName" placeholder="Name" readonly />
             <input type="text" name="price" placeholder="Price" readonly />
             <input type="number" name="quantity" placeholder="Qty" value="1" min="1" />
-            <button type="button" onclick="removeProductRow(this)">Delete</button>
+            <button type="button" onclick="removeProductRow(this)" class="delete-product-row-btn">X</button>
         </div>    
     `;
     

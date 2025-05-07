@@ -1,0 +1,74 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : May 7, 2025, 1:46:05 PM
+    Author     : sanuja
+*/
+table {
+    width: 95%;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #9AA6B2;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.content-body {
+    display: flex;
+}
+
+.order-item-list {
+    flex-grow: 2;
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.order-summary {
+    flex-grow: 1;
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 10px 15px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    margin: 10px 0;
+}
+
+.order-action {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.order-action a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 8px;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.order-action a.cancel-btn {
+    background: #CB0404;
+}
+
+.order-action a.deliver-btn {
+    background: #03A791;
+}

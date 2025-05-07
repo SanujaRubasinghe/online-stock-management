@@ -5,6 +5,7 @@
 package com.stockmanager.Order.dao;
 
 import com.stockmanager.Order.model.Order;
+import com.stockmanager.Order.model.OrderItem;
 import java.util.List;
         
 
@@ -14,8 +15,11 @@ import java.util.List;
  */
 public interface OrderDAO {
     void addOrder(Order order);
+    void addOrderItem(OrderItem orderItem);
     void updateOrder(Order order);
     void deleteOrder(int orderId);
+    int getNextOrderId();
     Order getOrderbyId(int orderId);
     List<Order> getAllOrders();
+    List<OrderItem> getAllOrderItems(int orderId);
 }

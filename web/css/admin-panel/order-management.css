@@ -6,6 +6,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Created on : May 6, 2025, 12:04:37 PM
     Author     : sanuja
 */
+
+/* ---- View Order section --- */
 table {
     width: 95%;
     text-align: center;
@@ -20,4 +22,93 @@ table, th, td {
 
 tr:nth-child(even) {
     background: #f2f2f2;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    text-decoration: none;
+    background: #94B4C1;
+}
+
+.pending {
+    background: #fff5e6;
+    color: #ffad33;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 100vw;
+}
+
+.completed {
+    background: #e6ffe6;
+    color: #006600;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 100vw;
+}
+
+.cancelled {
+    background: #ffe6e6;
+    color: #e60000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 100vw;
+}
+
+
+/* --- Add Order section --- */
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.add-order-btn, 
+.place-order-btn{
+    margin-top: 10px;
+    padding: 5px 8px;
+}
+
+.add-order-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 50%;
+}
+
+.place-order-btn {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    background: #e6f9ff;
+    border: 1px solid #33cfff;
+    color: #002733;
+}
+
+.delete-product-row-btn {
+    background: #ffd6cc;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 5px;
+    font-size: 18px;
+    color: #e62e00;
+    cursor: pointer;
+}
+
+.product-row {
+    margin-top: 20px;
+}
+
+input {
+    font-size: 18px;
+    padding: 3px;
 }

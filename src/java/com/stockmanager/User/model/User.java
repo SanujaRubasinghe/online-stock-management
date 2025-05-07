@@ -16,7 +16,7 @@ public class User {
     private String userName;
     private String password;
     private String role;
-    private boolean activeStatus;
+    private String activeStatus;
     private String loginDate;
 
     public User(int id, String firstName, String lastName, String userName, String password, String role) {
@@ -28,7 +28,7 @@ public class User {
         this.role = role;
     }
     
-    public User(String firstName, int id, String lastName, String userName, String role, boolean activeStatus, String loginDate) {
+    public User(String firstName, int id, String lastName, String userName, String role, String activeStatus, String loginDate) {
         this.firstName = firstName;
         this.id = id;
         this.lastName = lastName;
@@ -37,8 +37,6 @@ public class User {
         this.activeStatus = activeStatus;
         this.loginDate = loginDate;
     }
-    
-   
 
     public User(String firstName, String lastName, String userName, String password, String role) {
         this.firstName = firstName;
@@ -57,7 +55,7 @@ public class User {
         return loginDate;
     }
     
-    public boolean getActiveStatus() {
+    public String getActiveStatus() {
         return activeStatus;
     }
         

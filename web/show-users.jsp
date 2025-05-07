@@ -55,7 +55,9 @@
                         <td>${tempUser.getUserName()}</td>
                         <td>${tempUser.getRole()}</td>
                         <td>
-                            <span class="${tempUser.getActiveStatus()}">${tempUser.getActiveStatus()}</span>
+                            <span class="${tempUser.getActiveStatus()}">
+                                ${tempUser.getActiveStatus()}
+                            </span>
                         </td>
                         <td>${tempUser.getLoginDate()}</td>
                         <td><a href="#" class="update-btn">Update</a> | <a href="delete-user?id=${tempUser.getId()}" class="delete-btn">Delete</a></td>

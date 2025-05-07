@@ -5,6 +5,7 @@
 package com.stockmanager.Order.dao;
 
 import com.stockmanager.Order.model.Order;
+import com.stockmanager.Order.model.OrderItem;
 import com.stockmanager.util.LoggerUtil;
 
 import java.sql.*;
@@ -28,12 +29,11 @@ public class OrderDAOImpl implements OrderDAO {
     
     @Override
     public void addOrder(Order order) {
-        String sql = "INSERT INTO orders (customer_name, order_date, total_amount) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO orders (customer_name, total_amount) VALUES (?, ?)";
         try (Connection connection = dataSource.getConnection()) {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, order.getCustomerName());
-            stmt.setString(2, order.getOrderDate());
-            stmt.setDouble(3, order.getTotalAmount());
+            stmt.setDouble(2, order.getTotalAmount());
             stmt.executeUpdate();
             
             logger.log(Level.INFO, "Order inserted: {0}", order.getCustomerName());
@@ -43,14 +43,37 @@ public class OrderDAOImpl implements OrderDAO {
     }
     
     @Override
+    public void addOrderItem(OrderItem orderItem) {
+        String sql = "insert into order_items(orderID, product_code, product_name, quantity, unit_price, total_price) values(?,?,?,?,?,?)";
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, orderItem.getOrderId());
+            stmt.setString(2, orderItem.getProductCode());
+            stmt.setString(3, orderItem.getProductName());
+            stmt.setInt(4, orderItem.getQuantity());
+            stmt.setDouble(5, orderItem.getUnitPrice());
+            stmt.setDouble(6, orderItem.getTotalPrice());
+            
+            stmt.executeUpdate();
+            
+            logger.log(Level.INFO, "OrderItem inserted {0}", orderItem.getProductName());
+            
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Failed to insert order item.", e);
+            e.printStackTrace();
+        }
+    }
+    
+    @Override
     public void updateOrder(Order order) {
-        String sql = "UPDATE orders SET customer_name=?, order_date=?, total_amount=? WHERE order_id=?";
+        String sql = "UPDATE orders SET customer_name=?, order_date=?, order_status=?, total_amount=? WHERE order_id=?";
         try (Connection connection = dataSource.getConnection()) {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, order.getCustomerName());
             stmt.setString(2, order.getOrderDate());
-            stmt.setDouble(3, order.getTotalAmount());
-            stmt.setInt(4, order.getOrderId());
+            stmt.setString(3, order.getOrderStatus());
+            stmt.setDouble(4, order.getTotalAmount());
+            stmt.setInt(5, order.getOrderId());
             stmt.executeUpdate();
             
             logger.log(Level.INFO, "Order updated: ID {0}", order.getOrderId());
@@ -88,9 +111,10 @@ public class OrderDAOImpl implements OrderDAO {
                 int orderID = result.getInt("order_id");
                 String customerName = result.getString("customer_name");
                 String orderDate = result.getString("order_date");
+                String orderStatus = result.getString("order_status");
                 double totalAmount = result.getDouble("total_amount");
                 
-                order = new Order(orderID, customerName, orderDate, totalAmount);
+                order = new Order(orderID, customerName, orderDate, orderStatus, totalAmount);
             }
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Failed to fetch order by id:",e);
@@ -111,9 +135,10 @@ public class OrderDAOImpl implements OrderDAO {
                 int orderId = results.getInt("order_id");
                 String customerName = results.getString("customer_name");
                 String orderDate = results.getString("order_date");
+                String orderStatus = results.getString("order_status");
                 double totalAmount = results.getDouble("total_amount");
                 
-                Order order = new Order(orderId, customerName, orderDate, totalAmount);
+                Order order = new Order(orderId, customerName, orderDate, orderStatus, totalAmount);
                 
                 orders.add(order);
             }
@@ -124,5 +149,55 @@ public class OrderDAOImpl implements OrderDAO {
         }
         
         return orders;
+    }
+    
+    @Override
+    public int getNextOrderId() {
+        String sql = "select * from orders order by order_id desc limit 1";
+        int nextOrderId = 0;
+        try (Connection conn = dataSource.getConnection()) {
+            Statement stmt = conn.createStatement();
+            ResultSet result = stmt.executeQuery(sql);
+            
+            if (result.next()) {
+                nextOrderId = result.getInt("order_id");
+            }
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error fetching last order id", e);
+        }
+        
+        return nextOrderId;
+    }
+    
+    @Override
+    public List<OrderItem> getAllOrderItems(int orderId) {
+        String sql = "select * from order_items where orderID=?";
+        List<OrderItem> list = new ArrayList<>();
+        
+        try (Connection conn = dataSource.getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, orderId);
+            
+            ResultSet results = stmt.executeQuery();
+            
+            while (results.next()) {
+                OrderItem orderItem = new OrderItem(
+                        results.getInt("itemID"),
+                        results.getInt("orderID"),
+                        results.getString("product_code"),
+                        results.getString("product_name"),
+                        results.getInt("quantity"),
+                        results.getDouble("unit_price"),
+                        results.getDouble("total_price")
+                );
+                
+                list.add(orderItem);
+            }
+            
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error fetching order items.", e);
+        }
+        
+        return list;
     }
 }

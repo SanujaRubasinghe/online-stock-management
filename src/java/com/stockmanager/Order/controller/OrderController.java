@@ -5,6 +5,7 @@
 package com.stockmanager.Order.controller;
 
 import com.stockmanager.Order.model.Order;
+import com.stockmanager.Order.model.OrderItem;
 import com.stockmanager.Order.service.OrderService;
 import java.util.List;
 
@@ -57,6 +58,13 @@ public class OrderController extends HttpServlet {
                 orderService.removeOrder(deleteId);
                 response.sendRedirect("OrderController");
                 break;
+            case "view-order-items":
+                int orderId = Integer.parseInt(request.getParameter("orderid"));
+                List<OrderItem> orderItemList = orderService.fetchAllOrderItems(orderId);
+                request.setAttribute("orderItemList", orderItemList);
+                request.setAttribute("orderId", orderId);
+                request.getRequestDispatcher("/order-items.jsp").forward(request, response);
+                break;
             default:
                 List<Order> orderList = orderService.fetchAllOrders();
                 request.setAttribute("orderList", orderList);
@@ -72,19 +80,44 @@ public class OrderController extends HttpServlet {
         
         String action = request.getParameter("action");
        
-        int id = Integer.parseInt(request.getParameter("orderId"));
-        String customerName = request.getParameter("customerName");
-        String orderDate = request.getParameter("orderDate");
-        double totalAmount = Double.parseDouble(request.getParameter("totalAmount"));
+        String customer = request.getParameter("customer");
+        String orderStatus = request.getParameter("orderStatus");
         
-        Order order = new Order(id, customerName, orderDate, totalAmount);
+        String[] productCodes = request.getParameterValues("productCode");
+        String[] productNames = request.getParameterValues("productName");
+        String[] productPrices = request.getParameterValues("price");
+        String[] productQuants = request.getParameterValues("quantity");
+        
+        double totalOrderValue = 0.0;
+        double totalOrderItemValue;
+        
         
         switch (action) {
             case "add-order":
-                orderService.createOrder(order);
+                for (int i = 0; i < productCodes.length; i++) {
+                    totalOrderValue += Double.parseDouble(productPrices[i]) * Double.parseDouble(productQuants[i]);
+                }
+                orderService.createOrder(new Order(
+                        customer, orderStatus, totalOrderValue
+                ));
+                int orderId = orderService.nextOrderId();
+                for (int i=0; i < productCodes.length; i++) {
+                    totalOrderItemValue = Double.parseDouble(productQuants[i]) * Double.parseDouble(productPrices[i]);
+                    
+                    orderService.createOrderItem(new OrderItem(
+                            orderId,
+                            productCodes[i],
+                            productNames[i],
+                            Integer.parseInt(productQuants[i]),
+                            Double.parseDouble(productPrices[i]),
+                            totalOrderItemValue        
+                    ));
+                }
+               
+                response.sendRedirect("OrderController");
                 break;
             case "update-order":
-                orderService.modifyOrder(order);
+                break;
             default:
                 response.sendRedirect("OrderController");
         }       

@@ -12,17 +12,35 @@ public class Order {
     private int orderId;
     private String customerName;
     private String orderDate;
+    private String orderStatus;
     private double totalAmount;
     
     public Order(){};
 
-    public Order(int orderId, String customerName, String orderDate, double totalAmount) {
+    public Order(int orderId, String customerName, String orderDate, String orderStatus, double totalAmount) {
         this.orderId = orderId;
         this.customerName = customerName;
         this.orderDate = orderDate;
+        this.orderStatus = orderStatus;
         this.totalAmount = totalAmount;
     }
 
+    public Order(String customerName, String orderStatus, double totalAmount) {
+        this.customerName = customerName;
+        this.orderStatus = orderStatus;
+        this.totalAmount = totalAmount;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    
+    
     public int getOrderId() {
         return orderId;
     }

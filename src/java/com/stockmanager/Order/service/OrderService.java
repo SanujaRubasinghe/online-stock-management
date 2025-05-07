@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import com.stockmanager.Order.dao.OrderDAO;
 import com.stockmanager.Order.dao.OrderDAOImpl;
 import com.stockmanager.Order.model.Order;
+import com.stockmanager.Order.model.OrderItem;
 import java.util.List;
 
 /**
@@ -28,6 +29,10 @@ public class OrderService {
         orderDAO.addOrder(order);
     }
     
+    public void createOrderItem(OrderItem orderItem) {
+        orderDAO.addOrderItem(orderItem);
+    }
+    
     public void modifyOrder(Order order) {
         orderDAO.updateOrder(order);
     }
@@ -42,5 +47,13 @@ public class OrderService {
     
     public List<Order> fetchAllOrders() {
         return orderDAO.getAllOrders();
+    }
+    
+    public List<OrderItem> fetchAllOrderItems(int orderId) {
+        return orderDAO.getAllOrderItems(orderId);
+    }
+    
+    public int nextOrderId() {
+        return orderDAO.getNextOrderId();
     }
 }
