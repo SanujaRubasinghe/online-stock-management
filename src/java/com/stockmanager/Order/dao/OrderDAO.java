@@ -18,6 +18,7 @@ public interface OrderDAO {
     void addOrderItem(OrderItem orderItem);
     void updateOrder(Order order);
     void deleteOrder(int orderId);
+    void modifyOrderStatus(int orderId, String orderStatus);
     int getNextOrderId();
     Order getOrderbyId(int orderId);
     List<Order> getAllOrders();

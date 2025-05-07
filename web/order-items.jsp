@@ -60,8 +60,8 @@
                             </div>
                         </c:forEach>
                         <div class="order-action">
-                            <a href="OrderController?action=cancel-order&orderid=${temp.getOrderId()}" class="cancel-btn">Cancel</a>
-                            <a href="OrderController?action=complete-order&orderid=${temp.getOrderId()}" class="deliver-btn">Delivered</a>
+                            <a href="OrderController?action=cancel-order&orderid=${orderId}" class="cancel-btn">Cancel</a>
+                            <a href="OrderController?action=complete-order&orderid=${orderId}" class="deliver-btn">Delivered</a>
                         </div>
                     </div>
                 </div>

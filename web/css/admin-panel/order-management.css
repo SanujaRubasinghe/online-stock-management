@@ -42,7 +42,7 @@ tr:nth-child(even) {
     border-radius: 100vw;
 }
 
-.completed {
+.delivered {
     background: #e6ffe6;
     color: #006600;
     padding: 5px 10px;

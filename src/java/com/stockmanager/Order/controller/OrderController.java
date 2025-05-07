@@ -65,6 +65,16 @@ public class OrderController extends HttpServlet {
                 request.setAttribute("orderId", orderId);
                 request.getRequestDispatcher("/order-items.jsp").forward(request, response);
                 break;
+            case "cancel-order":
+                orderId = Integer.parseInt(request.getParameter("orderid"));
+                orderService.setOrderStatus(orderId, "cancelled");
+                response.sendRedirect("OrderController");
+                break;
+            case "complete-order":
+                orderId = Integer.parseInt(request.getParameter("orderid"));
+                orderService.setOrderStatus(orderId, "delivered");
+                response.sendRedirect("OrderController");
+                break;
             default:
                 List<Order> orderList = orderService.fetchAllOrders();
                 request.setAttribute("orderList", orderList);

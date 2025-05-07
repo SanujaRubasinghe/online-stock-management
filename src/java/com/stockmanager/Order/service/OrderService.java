@@ -41,6 +41,10 @@ public class OrderService {
         orderDAO.deleteOrder(orderId);
     }
     
+    public void setOrderStatus(int orderId, String orderStatus) {
+        orderDAO.modifyOrderStatus(orderId, orderStatus);
+    }
+    
     public Order fetchOrderById(int orderId) {
         return orderDAO.getOrderbyId(orderId);
     }
