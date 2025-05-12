@@ -1,0 +1,82 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+
+ 
+    Created on : Mar 28, 2025, 10:14:25 AM
+    Author     : sanuja
+
+*/
+
+
+/* login-page.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 12px 40px 12px 40px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f9f9f9;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+form input[name="username"] {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjY2NjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTExIDJDMTIuNjY3IDIgMTQgMy4zMzMgMTQgNUMxNCA2LjY2NyAxMi42NjcgOCAxMSA4QzkuMzMzIDggOCA2LjY2NyA4IDVDOCAzLjMzMyA5LjMzMyAyIDExIDJaTTExIDEwQzguMzMzIDEwIDQgMTEuMzMzIDQgMTNDNCAxNC4wNTUgNS45NDUgMTUgMTEgMTVDMTYuMDU1IDE1IDE4IDE0LjA1NSAxOCAxM0MxOCAxMS4zMzMgMTMuNjY3IDEwIDExIDEwWiIvPjwvc3ZnPg==");
+}
+
+form input[name="password"] {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjY2NjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTUgOCBWNSBBNSA1IDAgMCAxIDE1IDVWNCAxMyA4IDUgOCBWMTUgOCAxNSA4IDE1IDggMTUgOFYxM0g1VjhNMTEgMTQuNUMxMS4yNzIgMTQuNSAxMS41IDE0LjI3MiAxMS41IDE0VjExQzExLjUgMTAuNzI4IDExLjI3MiAxMCAxMSAxMEMxMC43MjggMTAgMTAuNSAxMC43MjggMTAuNSAxMVYxNEMxMC41IDE0LjI3MiAxMC43MjggMTQuNSAxMSAxNC41WiIvPjwvc3ZnPg==");
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2575fc;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1a5fd0;
+}
+

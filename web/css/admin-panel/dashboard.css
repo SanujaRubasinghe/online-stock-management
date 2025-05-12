@@ -1,0 +1,179 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : May 8, 2025, 9:07:35 AM
+    Author     : sanuja
+*/
+
+/* --- General Layout --- */
+/* --- General Layout --- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F6F9;
+    color: #2C3E50;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* --- Header Styling --- */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dashboard-header h1 {
+    font-size: 3.5rem; /* Larger heading */
+    font-weight: 800;
+    color: #34495E;
+    animation: fadeInDown 0.6s ease-in-out;
+}
+
+.dashboard-header p {
+    font-size: 1rem; /* Smaller subtext */
+    color: #7F8C8D;
+    animation: fadeInDown 0.8s ease-in-out;
+}
+
+/* --- Dashboard Card Grid --- */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* --- Card Base Style --- */
+.dashboard-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.7s ease forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Card Header --- */
+.card-header {
+    font-size: 1.75rem; /* Larger header */
+    font-weight: 700;
+    color: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Card Backgrounds --- */
+.users-card {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.products-card {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.orders-card {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+
+.suppliers-card {
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+}
+
+/* --- Card Metric Styling --- */
+.card-body {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 10px 0 20px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+.card-body p {
+    font-size: 3.5rem; /* Bigger number */
+    font-weight: 900;
+    margin: 12px 0;
+    color: #fff;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    line-height: 1;
+}
+
+.dashboard-card:hover .card-body p {
+    transform: scale(1.08);
+    opacity: 0.95;
+}
+
+/* --- View More Button --- */
+.view-more-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #34495E;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-size: 0.9rem;
+}
+
+.view-more-btn:hover {
+    background-color: #34495E;
+    color: #ffffff;
+    border-color: #34495E;
+    transform: scale(1.05);
+}
+
+/* --- Responsive Layouts --- */
+@media (max-width: 768px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

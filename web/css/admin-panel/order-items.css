@@ -1,0 +1,177 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : May 7, 2025, 1:46:05 PM
+    Author     : sanuja
+*/
+/*table {
+    width: 95%;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #9AA6B2;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.content-body {
+    display: flex;
+}
+
+.order-item-list {
+    flex-grow: 2;
+    height: 100%;
+    border-right: 1px solid black;
+}
+
+.order-summary {
+    flex-grow: 1;
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 10px 15px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    margin: 10px 0;
+}
+
+.order-action {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.order-action a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 8px;
+    border: none;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.order-action a.cancel-btn {
+    background: #CB0404;
+}
+
+.order-action a.deliver-btn {
+    background: #03A791;
+}*/
+
+/* --- Table Styling --- */
+table {
+    width: 95%;
+    margin: 20px auto;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+th {
+    background-color: #2e2e42;
+    color: white;
+    font-weight: 600;
+}
+
+/* --- Content Layout --- */
+.content-body {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* --- Order Item List --- */
+.order-item-list {
+    flex: 2;
+    padding-right: 20px;
+    border-right: 1px solid #d0d7de;
+}
+
+/* --- Order Summary Panel --- */
+.order-summary {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.order-summary h3 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* --- Individual Order Items --- */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #333;
+}
+
+/* --- Order Action Buttons --- */
+.order-action {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.order-action a {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.order-action a.cancel-btn {
+    background-color: #e53935;
+}
+
+.order-action a.cancel-btn:hover {
+    background-color: #b71c1c;
+}
+
+.order-action a.deliver-btn {
+    background-color: #26a69a;
+}
+
+.order-action a.deliver-btn:hover {
+    background-color: #00796b;
+}

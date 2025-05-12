@@ -1,0 +1,101 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Mar 22, 2025, 6:09:36 PM
+    Author     : sanuja
+*/
+
+/*.add-form {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    padding: 20px;
+}
+
+label {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.add-form input, select {
+    font-size: 18px;
+    width:60%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 3px;
+}
+
+.add-form input[type='submit'] {
+    background-color: #8ABFA3;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    width: 20%;
+    cursor: pointer;
+}*/
+/* Ensure it doesn't overlap with navbar/sidebar */
+.content-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e2e42;
+}
+
+/* Form styles */
+.add-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Input fields */
+.add-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.add-form input[type="text"],
+.add-form input[type="password"],
+.add-form input[type="number"],
+.add-form select {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.3s ease;
+}
+
+.add-form input[type="text"]:focus,
+.add-form input[type="password"]:focus,
+.add-form input[type="number"]:focus,
+.add-form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Submit button */
+.add-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.add-form input[type="submit"]:hover {
+    background-color: #43a047;
+}

@@ -1,0 +1,319 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Mar 27, 2025, 4:05:25 PM
+    Author     : sanuja
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: #EAEAEA;
+}
+
+#content {
+    margin-left: 240px; /* Width of sidebar */
+    padding-top: 60px;  /* Height of navbar */
+    background-color: #f4f4f9;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Container for the page content */
+.content-container {
+    padding: 30px;
+}
+
+/* Header section with title and add button */
+.content-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.content-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e2e42;
+}
+
+.add-btn {
+    display: inline-block;
+    background-color: #4F959D;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 5px 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    float: right;
+}
+
+/* Sidebar container */
+.side-bar {
+    width: 240px;
+    height: 100vh;
+    background: #1e1e2f;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-y: auto;
+}
+
+/* Menu section */
+.menu {
+    padding: 20px;
+}
+
+.menu-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Menu item styles */
+.item {
+    margin: 10px 0;
+}
+
+.item a,
+.item .sub-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.item a:hover,
+.item .sub-btn:hover {
+    background: #343454;
+    color: #fff;
+}
+
+/* Arrow for dropdown */
+.dropdown {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjY2NjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+PHBhdGggZD0iTTQgMTFsNS01LTUtNSIvPjwvc3ZnPg==");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Rotate arrow when open */
+.item.open .dropdown {
+    transform: rotate(90deg);
+}
+
+/* Submenu styling */
+.sub-menu {
+    display: none;
+    padding-left: 20px;
+    flex-direction: column;
+}
+
+.sub-menu a {
+    padding: 10px 10px;
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.sub-menu a:hover {
+    color: #fff;
+}
+
+/* Show submenu when .open is active */
+.item.open .sub-menu {
+    display: flex;
+}
+
+
+
+
+/*------------------------------------*/
+
+/*----- content container -----*/
+/*.content-container {
+    width: 80%;
+    min-height: 200px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    background: white;
+    border: none;
+    border-radius: 5px;
+    margin: 50px auto;
+}
+
+.content-heading {
+    border-bottom: 2px solid #4D55CC;
+    background: #EEEEEE;
+    height: 50px;
+}
+
+.content-body {
+    padding: 10px;
+}
+
+.content-title {
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.content-title::before {
+    content: '▣ ';
+}*/
+
+/*---- Nav Bar -----*/
+/*.nav-bar {
+    padding: 5px 30px;
+    line-height: 60px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    background: white;
+    overflow: hidden;
+}
+
+.user-profile {
+    overflow: hidden;
+    float: right;
+       
+}
+
+.user-profile .user-profile-dropbtn {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    
+}
+
+.user-dropdown {
+    display: none;
+    right: 0;
+    top: 70px;
+    position: absolute;
+    background: white;
+    min-width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.user-dropdown a {
+    float: none;
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;  
+    line-height: 10px;
+}
+
+.user-dropdown a:hover {
+    background: #ddd;
+}
+.show {
+    display: block;
+}*/
+
+/* Navbar container */
+/* Navbar container */
+.nav-bar {
+    height: 60px;
+    width: calc(100% - 240px); /* Leave space for sidebar */
+    background-color: #2e2e42;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    font-family: 'Segoe UI', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 240px; /* Push to the right to avoid sidebar overlap */
+    z-index: 1000;
+}
+
+/* Time display */
+.nav-time {
+    color: #ccc;
+    font-size: 15px;
+}
+
+/* User profile dropdown */
+.user-profile {
+    position: relative;
+}
+
+.user-profile-dropbtn {
+    background-color: transparent;
+    color: #f0f0f0;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.user-profile-dropbtn:hover {
+    background-color: #444463;
+}
+
+/* Dropdown content */
+.user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #2e2e42;
+    min-width: 140px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 1001;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.user-dropdown a:hover {
+    background-color: #3e3e5e;
+    color: #fff;
+}
+
+
+
+

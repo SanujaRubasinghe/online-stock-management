@@ -1,0 +1,230 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Mar 22, 2025, 6:36:12 PM
+    Author     : sanuja
+*/
+
+
+
+/*table {
+    width: 95%;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #9AA6B2;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+*/
+/*.access-level{
+    color: white;
+    display: inline-block;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 2px;
+}
+
+.High {
+    background: #F7374F;
+}
+
+.Medium {
+    background: #FCB454;
+}
+
+.Low {
+    background: green;
+}*/
+
+.access-level {
+    color: white;
+    display: inline-block;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for interactivity */
+.access-level:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Access level colors */
+.High {
+    background: #e53935;
+    background: linear-gradient(to right, #e53935, #f44336);
+}
+
+.Medium {
+    background: #f57c00;
+    background: linear-gradient(to right, #f57c00, #ffb74d);
+}
+
+.Low {
+    background: #43a047;
+    background: linear-gradient(to right, #43a047, #66bb6a);
+}
+
+
+/*
+.delete-btn, .update-btn {
+    display: inline-block;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.delete-btn {
+    background: #BF3131;
+}
+
+.update-btn {
+    background: #336D82;
+}
+
+.Online {
+    color: green;
+    font-weight: bold;
+}
+
+.Offline {
+    color: red;
+    font-weight: bold;
+}*/
+
+/* Ensure main content respects sidebar and navbar */
+
+
+.add-btn {
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+th {
+    background-color: #2e2e42;
+    color: white;
+    font-weight: 600;
+}
+
+/* Zebra striping */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Action buttons */
+.update-btn,
+.delete-btn {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.update-btn {
+    color: #007bff;
+}
+
+.update-btn:hover {
+    background-color: #e7f0ff;
+}
+
+.delete-btn {
+    color: #e53935;
+}
+
+.delete-btn:hover {
+    background-color: #fdecea;
+}
+
+/* Status styling */
+td span.Online,
+td span.Offline {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    
+}
+
+/* Active badge */
+td span.Online {
+    background-color: #d4edda;
+    color: #2e7d32;
+    border: 1px solid #81c784;
+    animation: pulse 1.5s infinite;
+}
+
+/* Inactive badge */
+td span.Offline {
+    background-color: #f8d7da;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+/* Pulse animation for active */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+

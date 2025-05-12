@@ -1,0 +1,293 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : May 6, 2025, 12:04:37 PM
+    Author     : sanuja
+*/
+
+/* ---- View Order section --- */
+/*table {
+    width: 95%;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid #9AA6B2;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    text-decoration: none;
+    background: #94B4C1;
+}
+
+.pending {
+    background: #fff5e6;
+    color: #ffad33;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 100vw;
+}
+
+.delivered {
+    background: #e6ffe6;
+    color: #006600;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 100vw;
+}
+
+.cancelled {
+    background: #ffe6e6;
+    color: #e60000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 100vw;
+}
+
+
+ --- Add Order section --- 
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.add-order-btn, 
+.place-order-btn{
+    margin-top: 10px;
+    padding: 5px 8px;
+}
+
+.add-order-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 50%;
+}
+
+.place-order-btn {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    background: #e6f9ff;
+    border: 1px solid #33cfff;
+    color: #002733;
+}
+
+.delete-product-row-btn {
+    background: #ffd6cc;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 5px;
+    font-size: 18px;
+    color: #e62e00;
+    cursor: pointer;
+}
+
+.product-row {
+    margin-top: 20px;
+}
+
+input {
+    font-size: 18px;
+    padding: 3px;
+}*/
+
+/* --- Table Styling --- */
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: center;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+th {
+    background-color: #2e2e42;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* --- View Button --- */
+.view-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background: #5c9ead;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.view-btn:hover {
+    background: #41788c;
+}
+
+/* --- Order Status Labels --- */
+.pending, .delivered, .cancelled {
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pending {
+    background: #fff5e6;
+    color: #ff9800;
+}
+
+.delivered {
+    background: #e6f9ec;
+    color: #2e7d32;
+}
+
+.cancelled {
+    background: #ffe6e6;
+    color: #d32f2f;
+}
+
+/* --- Form Label --- */
+label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2e2e2e;
+    margin-top: 10px;
+    display: block;
+}
+
+/* --- Add Order Button (Circle) --- */
+.add-order-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    transition: background 0.3s ease;
+}
+
+.add-order-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Place Order Button --- */
+.place-order-btn {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    background: #e0f7ff;
+    border: 2px solid #00bcd4;
+    color: #004d66;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.place-order-btn:hover {
+    background: #b2ebf2;
+}
+
+/* --- Delete Product Row Button --- */
+.delete-product-row-btn {
+    background: #ffebee;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: #c62828;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.delete-product-row-btn:hover {
+    background: #ffcdd2;
+}
+
+
+/* --- Row container --- */
+.product-row {
+    display: flex; /* Use flexbox for row alignment */
+    justify-content: space-between; /* Ensure inputs are spaced evenly */
+    gap: 15px; /* Space between inputs */
+    margin-top: 30px;
+    align-items: center; /* Align inputs vertically centered */
+}
+
+input {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+}
+
+/* --- Input Fields --- */
+.product-row input {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    flex-grow: 1; /* Allow inputs to take equal width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-row input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+}
